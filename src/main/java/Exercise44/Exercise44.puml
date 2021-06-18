@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Exercise44{
+    + product: Products
+
+    - print_products(product)
+}
+class ProductSearch{
+    + scan: Scanner
+    + input: String
+    + products: List<Product>
+
+    - Search_for_products(products)
+}
+class ParseJsonFile{
+    + products: List<products>
+    + fileElement: JsonElement
+    + fileObject: JsonObject
+    + jsonArrayofProducts: JsonArray
+    + name: String
+    + price: String
+    + quantity: String
+    + product: Product
+    + json: File
+
+    - parse(json file)
+}
+class Product{
+    + name: String
+    + price: String
+    + quantity: String
+
+    - getName()
+    - setName(String name)
+    - getPrice()
+    - setPrice(String price)
+    - getQuantity()
+    - setQuantity(quantity)
+}
+Exercise44 o--> ProductSearch
+Exercise44 o--> Product
+ProductSearch o--> ParseJsonFile
+ProductSearch o--> Product
+ParseJsonFile o--> Product
+@enduml

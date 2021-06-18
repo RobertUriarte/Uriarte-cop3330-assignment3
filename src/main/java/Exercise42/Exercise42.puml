@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Exercise41{
+    + formatted_names: ArrayList<String>
+    + Output: File
+    + format: String
+    + format2: String
+    + format3: String
+
+    -output_data(formatted_names)
+}
+
+class ParseData{
+    + names: ArrayList<String>
+    + parsed_names: ArrayList<String>
+    + Splits: String[]
+
+    - parsed_names(names)
+}
+
+class ReadFile{
+    + first_name: String
+    + last_name: String
+    + Salary: String
+    + Scan: Scanner
+    + input_file: File
+    + names: ArrayList<String>
+
+    - read_file(File)
+}
+Exercise41 o-->ParseData
+ParseData o--> ReadFile
+
+@enduml

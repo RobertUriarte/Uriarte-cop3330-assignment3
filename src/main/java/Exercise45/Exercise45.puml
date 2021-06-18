@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Exercise45{
+    + sentences: String[]
+    + scan: Scanner
+    + file_name: String
+    + output: File
+
+    -output_data(File)
+}
+
+class AlterData{
+    + sentences: String[]
+
+    - replace(sentences)
+}
+
+class ReadFile{
+    + input: File
+    + sentences: String[]
+    + Scan: Scanner
+
+    - read_file()
+}
+
+Exercise45 o--> AlterData
+AlterData o--> ReadFile
+@enduml

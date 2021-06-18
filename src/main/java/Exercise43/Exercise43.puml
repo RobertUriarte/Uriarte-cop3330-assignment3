@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Exercise43{
+    + responses: String[]
+
+    - main(responses)
+}
+
+class GenerateHTMl{
+    + responses: String[]
+    + index.html: File
+    + f1: File
+    + f2: File
+
+    - create_html(responses)
+}
+
+class UserData{
+    + responses: String[]
+    + Scan: Scanner
+
+    - prompt_user(responses)
+}
+Exercise43 o--> UserData
+GenerateHTMl o--> UserData
+@enduml

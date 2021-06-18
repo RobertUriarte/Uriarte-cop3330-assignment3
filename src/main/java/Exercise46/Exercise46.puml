@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class File{
+    - File: File
+    - Animals: String[]
+    - Animal: ArrayList<String>
+
+    + read_file(File)
+    + set_animal_array(Animals)
+}
+class Exercise46{
+    + used: ArrayList<String>
+    + used_counter: List<Integer>
+
+    - get_animal_array_values(Animal Array)
+    - Sort_used_animals(used array)
+    - sort_used_counter(used counter)
+    - print_animal_values(used array , used counter)
+}
+
+Exercise46 o--> File
+@enduml
